@@ -1,0 +1,74 @@
+window {
+    padding: 15px;
+    background-color:#0d0f12;
+}
+
+.draw_box {
+    background-color: #0d0f12;
+}
+
+button {
+    font-family : Open Sans;
+    color: blanchedalmond;
+    background-image: none;
+    background-color:#0d0f12;
+    font-size: 15px;
+    border-radius: 30px;
+}
+
+.start entry {
+    color: blanchedalmond;
+    background-image: none;
+    background-color:#14161c;
+    border-radius: 30px;
+    margin-right: 5px;
+
+}
+
+.draw_area {
+    background-image: none;
+}
+
+.panel_box {
+    background-image: none;
+    background-color:#0d0f12;
+}
+
+label {
+    font-family : Open Sans;
+    color: blanchedalmond;
+    font-size: 18px;
+}
+
+.labelSetting, .labelSetting label {
+    font-size: 16px;
+}
+
+text {
+    font-family : Open Sans;
+    color: blanchedalmond;
+    background-color:#14161c;
+    font-size: 18px;
+    padding-left: 10px;
+    border-radius: 10px;
+}
+
+.textEdgesOrVerticalse {
+    padding-left: 5px;
+}
+
+button:hover {
+    background-color: #282a36;
+    transition: color 10s;
+}
+
+radio {
+    font-family : Open Sans;
+    background-color: blanchedalmond;
+    border: none; 
+    background-image: none;
+}
+
+radio:checked {
+    background-color:#282a36;
+}

@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <object class="GtkWindow" id="mainWin">
+        <property name="default-height">600</property>
+        <property name="default-width">800</property>
+        <property name="title">3D_viewer_v1</property>
+        <property name="resizable">FALSE</property>
+        <style>
+            <class name="window" />
+        </style>
+        <child>
+            <object class="GtkBox" id="main_box">
+                <property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+                <property name="spacing">15</property>
+                <child>
+                    <object class="GtkBox" id="draw_box">
+                        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                        <property name="spacing">15</property>
+                        <style>
+                            <class name="draw_box" />
+                        </style>
+                        <child>
+                            <object class="GtkGrid" id="scale_grid">
+                                <property name="halign">GTK_ALIGN_START</property>
+                                <property name="valign">GTK_ALIGN_END</property>
+                                <property name="row-spacing">15</property>
+                                <property name="column-spacing">15</property>
+                                <style>
+                                    <class name="grid" />
+                                </style>
+                                <child>
+                                    <object class="GtkText" id="textScale">
+                                        <property name="max-length">4</property>
+                                        <style>
+                                            <class name="textScale" />
+                                        </style>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkButton" id="up_scale">
+                                        <property name="label">-</property>
+                                        <signal name="clicked" handler="scale_model" object="textScale"></signal>
+                                        <style>
+                                            <class name="start" />
+                                        </style>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkButton" id="down_scale">
+                                        <property name="label">+</property>
+                                        <signal name="clicked" handler="scale_model" object="textScale"></signal>
+                                        <style>
+                                            <class name="start" />
+                                        </style>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkDrawingArea" id="draw_area">
+                                <property name="content-height">530</property>
+                                <property name="content-width">600</property>
+                                <style>
+                                    <class name="draw_area" />
+                                </style>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkGrid" id="info_grid">
+                                <property name="halign">GTK_ALIGN_START</property>
+                                <property name="valign">GTK_ALIGN_END</property>
+                                <property name="row-spacing">15</property>
+                                <property name="column-spacing">15</property>
+                                <child>
+                                    <object class="GtkLabel" id="name_label">
+                                        <property name="label">Name:</property>
+                                        <property name="xalign">0</property>
+                                        <style>
+                                            <class name="label" />
+                                        </style>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkText" id="textNameLabel">
+                                        <property name="editable">no</property>
+                                        <property name="width-request">150</property>
+                                        <style>
+                                            <class name="text" />
+                                        </style>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkLabel" id="edges_label">
+                                        <property name="label">Edges:</property>
+                                        <property name="xalign">0</property>
+                                        <style>
+                                            <class name="label" />
+                                        </style>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkText" id="textEdgesLabel">
+                                        <property name="editable">no</property>
+                                        <property name="height-request">35</property>
+                                        <style>
+                                            <class name="textEdgesOrVerticalse" />
+                                        </style>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkLabel" id="vertices_label">
+                                        <property name="label">Vertices:</property>
+                                        <property name="xalign">0</property>
+                                        <style>
+                                            <class name="label" />
+                                        </style>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkText" id="textVerticesLabel">
+                                        <property name="editable">no</property>
+                                        <style>
+                                            <class name="textEdgesOrVerticalse" />
+                                        </style>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+                <child>
+                    <object class="GtkBox" id="panel_box">
+                        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                        <property name="width-request">200</property>
+                        <property name="height-request">600</property>
+                        <property name="spacing">15</property>
+                        <style>
+                            <class name="panel_box" />
+                        </style>
+                        <child>
+                            <object class="GtkButton" id="Setting">
+                                <property name="label">⚙</property>
+                                <property name="margin-start">150</property>
+                                <signal name="clicked" handler="setting_model"></signal>
+                                <style>
+                                    <class name="setting" />
+                                </style>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkLabel" id="input_label">
+                                <property name="label">File:</property>
+                                <property name="halign">GTK_ALIGN_START</property>
+                                <property name="valign">GTK_ALIGN_END</property>
+                                <style>
+                                    <class name="label" />
+                                </style>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkComboBoxText" id="fileBox">
+                                <property name="has-entry">true</property>
+                                <property name="active-id">fileBox</property>
+                                <items>
+                                    <item translatable="yes" id="BIBICA">BIBICA.obj</item>
+                                    <item translatable="yes" id="BUNNY">BUNNY.obj</item>
+                                    <item translatable="yes" id="CUB">CUB.obj</item>
+                                    <item translatable="yes" id="DOMIC">DOMIC.obj</item>
+                                    <item translatable="yes" id="GNOME">GNOME.obj</item>
+                                    <item translatable="yes" id="GOARD">GOURD.obj</item>
+                                    <item translatable="yes" id="KETTLE">KETTLE.obj</item>
+                                    <item translatable="yes" id="LAMP">LAMP.obj</item>
+                                    <item translatable="yes" id="OCTAIDER">OCTAIDER.obj</item>
+                                    <item translatable="yes" id="TETRAIDER">TETRAIDER.obj</item>
+                                </items>
+                                <style>
+                                    <class name="start" />
+                                </style>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkButton" id="start">
+                                <property name="label">Start</property>
+                                <signal name="clicked" handler="print_model" object="fileBox"></signal>
+                                <style>
+                                    <class name="start" />
+                                </style>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkLabel" id="transfer_label">
+                                <property name="label">Shift:</property>
+                                <property name="halign">GTK_ALIGN_START</property>
+                                <property name="valign">GTK_ALIGN_END</property>
+                                <style>
+                                    <class name="label" />
+                                </style>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkText" id="text_moving">
+                                <property name="editable">yes</property>
+                                <property name="max-length">75</property>
+                                <property name="max-length">6</property>
+                                <property name="height-request">35</property>
+                                <style>
+                                    <class name="text" />
+                                </style>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkGrid" id="transfer_grid">
+                                <property name="column-homogeneous">TRUE</property>
+                                <property name="row-homogeneous">TRUE</property>
+                                <property name="row-spacing">5</property>
+                                <property name="column-spacing">5</property>
+                                <style>
+                                    <class name="grid" />
+                                </style>
+                                <child>
+                                    <object class="GtkButton" id="moving_the_OX">
+                                        <property name="label">X</property>
+                                        <signal name="clicked" handler="moving_model" object="text_moving"></signal>
+                                        <style>
+                                            <class name="start" />
+                                        </style>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkButton" id="moving_the_OY">
+                                        <property name="label">Y</property>
+                                        <signal name="clicked" handler="moving_model" object="text_moving"></signal>
+                                        <style>
+                                            <class name="start" />
+                                        </style>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkButton" id="moving_the_OZ">
+                                        <property name="label">Z</property>
+                                        <signal name="clicked" handler="moving_model" object="text_moving"></signal>
+                                        <style>
+                                            <class name="start" />
+                                        </style>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkLabel" id="rotation_label">
+                                <property name="label">Angle of rotation:</property>
+                                <property name="halign">GTK_ALIGN_START</property>
+                                <property name="valign">GTK_ALIGN_END</property>
+                                <style>
+                                    <class name="label" />
+                                </style>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkText" id="text_rotation">
+                                <property name="editable">yes</property>
+                                <property name="max-length">6</property>
+                                <property name="height-request">35</property>
+                                <style>
+                                    <class name="text" />
+                                </style>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkGrid" id="rotation_grid">
+                                <property name="column-homogeneous">TRUE</property>
+                                <property name="row-homogeneous">TRUE</property>
+                                <property name="row-spacing">5</property>
+                                <property name="column-spacing">5</property>
+                                <style>
+                                    <class name="grid" />
+                                </style>
+                                <child>
+                                    <object class="GtkButton" id="rotation_the_OX">
+                                        <property name="label">X</property>
+                                        <signal name="clicked" handler="rotation_model" object="text_rotation"></signal>
+                                        <style>
+                                            <class name="start" />
+                                            <class name="OX_UP" />
+                                        </style>
+                                    </object>
+                                </child>
+
+                                <child>
+                                    <object class="GtkButton" id="rotation_the_OY">
+                                        <property name="label">Y</property>
+                                        <signal name="clicked" handler="rotation_model" object="text_rotation"></signal>
+                                        <style>
+                                            <class name="start" />
+                                        </style>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkButton" id="rotation_the_OZ">
+                                        <property name="label">Z</property>
+                                        <signal name="clicked" handler="rotation_model" object="text_rotation"></signal>
+                                        <style>
+                                            <class name="start" />
+                                        </style>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkButton" id="screenshot">
+                                <property name="label">Screenshot</property>
+                                <signal name="clicked" handler="screenshot_model"></signal>
+                                <style>
+                                    <class name="start" />
+                                </style>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </object>
+</interface>

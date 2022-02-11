@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <object class="GtkApplicationWindow" id="windowSetting">
+        <property name="title">Setting</property>
+        <property name="resizable">FALSE</property>
+        <property name="name">windowSetting</property>
+        <property name="modal">1</property>
+        <child>
+            <object class="GtkBox" id="box ">
+                <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                <property name="spacing">15</property>
+                <child>
+                    <object class="GtkGrid" id="grid ">
+                        <property name="row-spacing">15</property>
+                        <property name="column-spacing">15</property>
+                        <child>
+                            <object class="GtkLabel" id="projectionType:">
+                                <property name="label">Projection type:</property>
+                                <property name="height-request">48</property>
+                                <property name="xalign">0</property>
+                                <style>
+                                    <class name="labelSetting" />
+                                </style>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">0</property>
+                                </layout>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkCheckButton" id="parallelProjection">
+                                <property name="label">Parallel projection</property>
+                                <property name="group">centralProjection</property>
+                                <property name="active">True</property>
+                                <layout>
+                                    <property name="column">1</property>
+                                    <property name="row">0</property>
+                                </layout>
+                                <style>
+                                    <class name="labelSetting" />
+                                </style>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkCheckButton" id="centralProjection">
+                                <property name="label">Central projection</property>
+                                <layout>
+                                    <property name="column">2</property>
+                                    <property name="row">0</property>
+                                </layout>
+                                <style>
+                                    <class name="labelSetting" />
+                                </style>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkLabel" id="lineType:">
+                                <property name="label">Line type:</property>
+                                <property name="height-request">48</property>
+                                <property name="xalign">0</property>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">1</property>
+                                </layout>
+                                <style>
+                                    <class name="labelSetting" />
+                                </style>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkCheckButton" id="solidLine">
+                                <property name="label">Solid line</property>
+                                <property name="group">dottedLine</property>
+                                <property name="active">True</property>
+                                <layout>
+                                    <property name="column">1</property>
+                                    <property name="row">1</property>
+                                </layout>
+                                <style>
+                                    <class name="labelSetting" />
+                                </style>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkCheckButton" id="dottedLine">
+                                <property name="label">Dotted line</property>
+                                <layout>
+                                    <property name="column">2</property>
+                                    <property name="row">1</property>
+                                </layout>
+                                <style>
+                                    <class name="labelSetting" />
+                                </style>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkLabel" id="setingEdge">
+                                <property name="label">Seting edge:</property>
+                                <property name="height-request">48</property>
+                                <property name="xalign">0</property>
+                                <style>
+                                    <class name="labelSetting" />
+                                </style>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">2</property>
+                                </layout>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkComboBoxText" id="colorEdgeComboBox">
+                                <property name="active-id">colorComboBox</property>
+                                <property name="active">0</property>
+                                <items>
+                                    <item translatable="yes" id="Gold">Gold</item>
+                                    <item translatable="yes" id="White">White</item>
+                                    <item translatable="yes" id="Violet">Violet</item>
+                                </items>
+                                <layout>
+                                    <property name="column">1</property>
+                                    <property name="row">2</property>
+                                </layout>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkEntryBuffer" id="thicknessEdgeBuf">
+                                <property name="text">15</property>
+                            </object>
+                            <object class="GtkText" id="edgeThicknessText">
+                                <property name="name">textSetting</property>
+                                <property name="buffer">thicknessEdgeBuf</property>
+                                <property name="max-length">4</property>
+                                <property name="placeholder-text">thickness</property>
+                                <layout>
+                                    <property name="column">2</property>
+                                    <property name="row">2</property>
+                                </layout>
+                                <style>
+                                    <class name="labelSetting" />
+                                </style>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkLabel" id="displayingVertices">
+                                <property name="label">Way of displaying vertices:</property>
+                                <property name="height-request">48</property>
+                                <property name="xalign">0</property>
+                                <style>
+                                    <class name="labelSetting" />
+                                </style>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">3</property>
+                                </layout>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkComboBoxText" id="displayingVerticesComboBox">
+                                <property name="active-id">colorComboBox</property>
+                                <property name="active">0</property>
+                                <items>
+                                    <item translatable="yes" id="Nothing">Nothing</item>
+                                    <item translatable="yes" id="Circle">Circle</item>
+                                    <item translatable="yes" id="Square">Square</item>
+                                </items>
+                                <layout>
+                                    <property name="column">1</property>
+                                    <property name="row">3</property>
+                                    <property name="column-span">2</property>
+                                </layout>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkLabel" id="setingVertices">
+                                <property name="label">Seting vertices:</property>
+                                <property name="height-request">48</property>
+                                <property name="xalign">0</property>
+                                <style>
+                                    <class name="labelSetting" />
+                                </style>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">4</property>
+                                </layout>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkComboBoxText" id="colorVerticesComboBox">
+                                <property name="active-id">colorComboBox</property>
+                                <property name="active">0</property>
+                                <items>
+                                    <item translatable="yes" id="Gold">Gold</item>
+                                    <item translatable="yes" id="White">White</item>
+                                    <item translatable="yes" id="Violet">Violet</item>
+                                </items>
+                                <layout>
+                                    <property name="column">1</property>
+                                    <property name="row">4</property>
+                                </layout>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkEntryBuffer" id="thicknessVertBuf">
+                                <property name="text">15</property>
+                            </object>
+                            <object class="GtkText" id="verticesThicknessText">
+                                <property name="buffer">thicknessVertBuf</property>
+                                <property name="max-length">4</property>
+                                <property name="placeholder-text">thickness</property>
+                                <layout>
+                                    <property name="column">2</property>
+                                    <property name="row">4</property>
+                                </layout>
+                                <style>
+                                    <class name="labelSetting" />
+                                </style>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkLabel" id="colorBackground">
+                                <property name="label">Background color:</property>
+                                <property name="height-request">48</property>
+                                <property name="xalign">0</property>
+                                <style>
+                                    <class name="labelSetting" />
+                                </style>
+                                <layout>
+                                    <property name="column">0</property>
+                                    <property name="row">5</property>
+                                </layout>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkComboBoxText" id="colorBackgroundComboBox">
+                                <property name="active-id">colorComboBox</property>
+                                <property name="active">0</property>
+                                <items>
+                                    <item translatable="yes" id="Сarbonic">Сarbonic</item>
+                                    <item translatable="yes" id="Wave">Wave</item>
+                                    <item translatable="yes" id="Dracula">Dracula</item>
+                                </items>
+                                <layout>
+                                    <property name="column">1</property>
+                                    <property name="row">5</property>
+                                    <property name="column-span">2</property>
+                                </layout>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkButton" id="buttonSetting">
+                                <property name="label">Apply</property>
+                                <signal name="clicked" handler="apply_new_setting"></signal>
+                                <layout>
+                                    <property name="column">1</property>
+                                    <property name="row">6</property>
+                                </layout>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </object>
+</interface>
