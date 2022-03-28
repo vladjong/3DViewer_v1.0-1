@@ -1,4 +1,4 @@
-![3D_V_app](3DViewer.png)
+![3D_V_app](3dViewer.png)
 # **DOCUMENTATION 3D\_VIEWER\_V1.0**
 ## **LET'S GO!**
 **3D\_VIEWER\_V1.0** - is an application that allows you to view 3D models in parallel and central projection. 
